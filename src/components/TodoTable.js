@@ -49,11 +49,9 @@ export default class TodoTable extends Component {
   };
 
   edit = (row) => {
-    console.log('ola');
     axios.put(`https://todowebservice.herokuapp.com/api/todos/${row._id}`,
     { description: this.state.description, done: this.state.done, _id: this.state._id })
       .then(res => {
-        console.log(res);
       });
   }
   
@@ -115,9 +113,6 @@ export default class TodoTable extends Component {
                         <DialogTitle id="form-dialog-title">Edit To-do </DialogTitle>
                         <DialogContent>
                           <TextField
-                            // onChange={this.handleChangeA('description')}
-                            // value={this.state.description}
-                            // name="description"
                             autoFocus
                             margin="dense"
                             label="Edit Description/To-do"
@@ -126,8 +121,6 @@ export default class TodoTable extends Component {
                             type="text"
                           />{row.description}
                           <Checkbox 
-                            // checked={this.state.done} 
-                            // onChange={this.handleChange('done')} 
                             checked={row.done}
                             value="done"
                             style={{ margin: 20 }} 

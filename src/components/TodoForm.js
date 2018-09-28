@@ -31,10 +31,6 @@ export default class TodoForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // const todo = {
-    //   description: this.state.description,
-    //   done: this.state.done
-    // };
 
     axios.post(`https://todowebservice.herokuapp.com/api/todos`,
      { description: this.state.description, done: this.state.done })
